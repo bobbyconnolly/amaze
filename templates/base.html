@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Maze Generator{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">Maze Generator</div>
+        <div class="navbar-menu">
+            <a href="{{ url_for('index') }}" class="nav-item">New Maze</a>
+            <a href="#" class="nav-item" id="showRecent">Recent Mazes</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+<!--    <footer class="footer">-->
+<!--        <p>Created with Flask & Canvas</p>-->
+<!--    </footer>-->
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>
